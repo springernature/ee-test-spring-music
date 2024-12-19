@@ -24,7 +24,6 @@ tasks:
       manifest: manifest-classic.yml
     - type: run
       name: create-container-image
-      script: \pack build spring-music --path ./build/libs --builder paketobuildpacks/builder-jammy-base
+      script: \pack
       docker:
         image: buildpacksio/pack:latest
-      restore_artifacts: true
