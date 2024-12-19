@@ -22,3 +22,9 @@ tasks:
       space: test
       deploy_artifact: build/libs/spring-music-1.0.jar
       manifest: manifest-classic.yml
+    - type: run
+      name: create-container-image
+      script: ./create-container-image.sh
+      docker:
+        image: buildpacksio/pack:latest
+      restore_artifacts: true
