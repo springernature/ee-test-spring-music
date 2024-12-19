@@ -1,0 +1,13 @@
+---
+applications:
+- name: spring-music-cnb
+  memory: 1G
+  random-route: true
+  lifecycle: cnb
+  buildpacks:
+  - docker://gcr.io/paketo-buildpacks/java
+  path: build/libs/spring-music-1.0.jar
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    SPRING_PROFILES_ACTIVE: http2
+    BP_JVM_VERSION: 21

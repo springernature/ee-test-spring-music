@@ -1,0 +1,23 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: spring-music
+spec:
+  components:
+    - name: spring-music-deployment
+      type: snstateless
+      properties:
+        image: eu.gcr.io/halfpipe-io/spring-music:latest
+        resources:
+          memory: 1Gi
+        ports:
+          - name: web
+            containerPort: 8080
+            servicePort: 8080
+            protocol: http
+      traits:
+        - type: sningress
+          properties:
+            publicRoutes:
+              - route: spring-music.apps.public.k8s.springernature.io
+                servicePort: 8080
