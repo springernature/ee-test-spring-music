@@ -3,6 +3,7 @@
 *.ids
 *.iws
 .idea/
+.vscode/
 
 .project
 .metadata
@@ -16,6 +17,7 @@ target/
 
 .gradle
 build/
+bin/
 
 *.log*
 /classes/
