@@ -2,7 +2,8 @@
 applications:
 - name: spring-music-classic
   memory: 1G
-  random-route: true
+  routes:
+  - route: spring-music-classic.springernature.app
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git#v4.73.0
   path: build/libs/spring-music-1.0.jar
