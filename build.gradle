@@ -9,7 +9,7 @@ plugins {
 group = 'org.cloudfoundry.samples.music'
 
 java {
-    sourceCompatibility = '17'
+    sourceCompatibility = "17"
 }
 
 repositories {
@@ -17,7 +17,7 @@ repositories {
 }
 
 ext {
-    javaCfEnvVersion = '3.1.2'
+    javaCfEnvVersion = '3.3.0'
 }
 
 dependencies {
@@ -43,11 +43,11 @@ dependencies {
     // runtime "io.lettuce:lettuce-core"
 
     // Webjars
-    implementation "org.webjars:bootstrap:3.1.1"
-    implementation "org.webjars:angularjs:1.2.16"
+    implementation 'org.webjars:bootstrap:5.0.0'
+    implementation 'org.webjars:angularjs:2.0.0-alpha.19'
     implementation "org.webjars:angular-ui:0.4.0-2"
     implementation "org.webjars:angular-ui-bootstrap:0.10.0-1"
-    implementation "org.webjars:jquery:2.1.0-2"
+    implementation 'org.webjars:jquery:3.5.0'
 
     // Oracle - uncomment one of the following after placing driver in ./libs
     // compile files('libs/ojdbc8.jar')
@@ -59,8 +59,8 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 
     if (JavaVersion.current() != project.targetCompatibility) {
         logger.warn("The build is using Java ${JavaVersion.current()} to build a Java ${project.targetCompatibility} compatible archive.")
