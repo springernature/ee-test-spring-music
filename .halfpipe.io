@@ -15,9 +15,10 @@ tasks:
     path: build/libs
     buildpack: docker.io/paketobuildpacks/java:18
     restore_artifacts: true
-    image_name: halfpipe-e2e-spring-music
+    image_name: eu.gcr.io/halfpipe-io/engineering-enablement/halfpipe-e2e-spring-music
 
   - type: deploy-cf
     manifest: manifest-docker.yml
     space: halfpipe-test
     api: ((cloudfoundry.api-snpaas))
+    docker_tag: gitref

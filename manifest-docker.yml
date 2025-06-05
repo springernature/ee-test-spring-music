@@ -3,7 +3,7 @@ applications:
 - name: spring-music-docker
   memory: 1G
   docker:
-    image: eu.gcr.io/halfpipe-io/spring-music:latest
+    image: eu.gcr.io/halfpipe-io/engineering-enablement/halfpipe-e2e-spring-music
     username: _json_key
   env:
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
