@@ -8,6 +8,12 @@ exclude = [
     "/build",
     "/bin"
 ]
+builder = "gcr.io/paketo-buildpacks/builder:base"
+
+[[build.buildpacks]]
+id = "gcr.io/paketo-buildpacks/java"
+version = "18.5.0"
+
 
 # disable the addition of spring-cloud-bindings by Paketo Cloud-Native buildpacks
 # spring-music is built to use CF Service bindings, not K8s service bindings

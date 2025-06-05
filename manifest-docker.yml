@@ -1,0 +1,12 @@
+---
+applications:
+- name: spring-music-docker
+  memory: 1G
+  random-route: true
+  docker:
+    image: eu.gcr.io/halfpipe-io/spring-music:latest
+    username: _json_key
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    SPRING_PROFILES_ACTIVE: http2
+    BP_JVM_VERSION: 21
