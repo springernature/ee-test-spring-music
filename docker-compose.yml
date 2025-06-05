@@ -1,6 +1,6 @@
 services:
   pack-builder:
-    image: buildpacksio/pack:latest
+    image: eu.gcr.io/halfpipe-io/engineering-enablement/halfpipe-buildx-pack
     volumes:
       - .:/workspace:rw
       - /var/run/docker.sock:/var/run/docker.sock
@@ -9,7 +9,7 @@ services:
       - DOCKER_CONFIG=/workspace/.docker
       - PACK_HOME=/workspace/.pack
     command: >
-      build eu.gcr.io/halfpipe-io/engineering-enablement/spring-music
+      pack build eu.gcr.io/halfpipe-io/engineering-enablement/spring-music
       --path ./build/libs
       --builder paketobuildpacks/builder-jammy-base
       --env BP_SPRING_CLOUD_BINDINGS_DISABLED=true
