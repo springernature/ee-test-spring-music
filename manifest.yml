@@ -1,10 +1,13 @@
 ---
 applications:
-- name: spring-music
+- name: spring-music-docker
   memory: 1G
-  random-route: true
-  path: build/libs/spring-music-1.0.jar
+  docker:
+    image: eu.gcr.io/halfpipe-io/engineering-enablement/halfpipe-e2e-spring-music
+    username: _json_key
   env:
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
     SPRING_PROFILES_ACTIVE: http2
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
+    BP_JVM_VERSION: 21
+  routes:
+    - route: spring-music-docker.springernature.app

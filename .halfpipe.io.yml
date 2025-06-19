@@ -1,6 +1,9 @@
 team: engineering-enablement
 pipeline: ee-test-spring-music
 
+feature_toggles:
+  - update-pipeline
+
 tasks:
   - type: run
     name: build
@@ -10,15 +13,15 @@ tasks:
     save_artifacts:
       - build/libs/spring-music-1.0.jar
 
-  - type: pack
-    name: test
+  - type: buildpack
+    name: pack n push
     path: build/libs
     buildpack: docker.io/paketobuildpacks/java:18
     restore_artifacts: true
     image_name: eu.gcr.io/halfpipe-io/engineering-enablement/halfpipe-e2e-spring-music
 
   - type: deploy-cf
-    manifest: manifest-docker.yml
+    manifest: manifest.yml
     space: halfpipe-test
     api: ((cloudfoundry.api-snpaas))
     docker_tag: gitref
