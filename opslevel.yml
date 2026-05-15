@@ -1,0 +1,13 @@
+version: 1
+component:
+  name: ee-test-spring-music
+  owner: engineering-enablement
+  description: "Spring Music demo application"
+  type: application_module
+  lifecycle: core
+  tier: Internal-Only
+  language: java
+  framework: spring-boot
+  system: APPL-437
+  properties:
+    static_module: true
